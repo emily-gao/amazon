@@ -15,11 +15,14 @@
   )
 end
 
-50.times do
+def create_product(promotion_id)
   Product.create(
     name: Faker::Commerce.unique.product_name,
     price: Faker::Commerce.price,
     department: Department.find(Department.ids.shuffle.first),
-    promotion: Promotion.find(Promotion.ids.shuffle.first)
+    promotion: promotion_id,
   )
 end
+
+50.times { create_product(Promotion.find(Promotion.ids.shuffle.first)) }
+20.times { create_product(nil) }
