@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20181117171430) do
     t.string "name", null: false
     t.decimal "price", null: false
     t.integer "department_id", null: false
-    t.integer "promotion_id", null: false
+    t.integer "promotion_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["department_id"], name: "index_products_on_department_id"
