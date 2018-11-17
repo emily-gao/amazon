@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'products#index'
+
   resources :promotions
   resources :departments
   resources :products
