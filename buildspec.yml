@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - echo Starting postgresql...
-      - brew services start postgresql
+      - service postgresql start
       - echo Installing Bundler...
       - gem install bundler
       - bundle install
