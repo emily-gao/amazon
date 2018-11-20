@@ -11,9 +11,8 @@ phases:
       - curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
       - sudo apt-get install nodejs
       - echo Installing PostgreSQL...
-      - sudo su -
-      - apt-get install postgresql postgresql-contrib
-      - apt-get install postgresql postgresql-contrib
+      - sudo apt-get install postgresql postgresql-contrib
+      - sudo apt-get install postgresql postgresql-contrib
       - service postgresql start
   pre_build:
     commands:
