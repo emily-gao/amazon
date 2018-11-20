@@ -1,0 +1,73 @@
+<div class="container-fluid mt-5">
+  <div class="card-box">
+    <div class="row mb-2">
+      <div class="col-md-12">
+        <h1>Products</h1>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-md-12 mx-auto">
+        <%= search_form_for @products_query, url: request.path, class: "form-inline text-right" do |f| %>
+          <%= f.search_field :name_cont, class: "form-control mr-2", placeholder: "Name" %>
+          <%= f.select :department_id_in, options_from_collection_for_select(Department.all, "id", "name"), { prompt: 'Department' }, { class: 'form-control mr-2' } %>
+          <%= f.select :promotion_id_in, options_from_collection_for_select(Promotion.all, "id", "code"), { prompt: 'Promotion' }, { class: 'form-control mr-2' } %>
+          <%= select_tag :limit, options_for_select([25, 50, 100], selected: params[:limit]), class: 'form-control mr-2' %>
+          <%= f.submit 'Search', class: 'btn btn-outline-primary', data: {disable_with: 'Please wait'} %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>
+                <%= sort_link(@products_query, :id, 'ID') %>
+              </th>
+              <th>
+                <%= sort_link(@products_query, :name) %>
+              </th>
+              <th>
+                <%= sort_link(@products_query, :price) %>
+              </th>
+              <th>
+                <%= sort_link(@products_query, :department) %>
+              </th>
+              <th>
+                <%= sort_link(@products_query, :promotion) %>
+              </th>
+              <th>
+                <%= sort_link(@products_query, :discounted_price) %>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @products.each do |product| %>
+              <tr>
+                <td>
+                  <%= link_to product.id, product_path(product) %>
+                </td>
+                <td>
+                  <%= link_to product.name, product_path(product) %>
+                <td>
+                  <%= number_to_currency(product.price) %>
+                </td>
+                <td>
+                  <%= product.department.name %>
+                </td>
+                <td>
+                  <%= product.promotion&.code %>
+                </td>
+                <td>
+                  <%= number_to_currency(product.discounted_price) %>
+                </td>
+              </tr>
+              <% end %>
+          </tbody>
+        </table>
+        <%= paginate @products %>
+      </div>
+    </div>
+  </div>
+</div>
