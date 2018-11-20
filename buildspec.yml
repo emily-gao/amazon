@@ -8,8 +8,8 @@ phases:
       - bundle install --with test
   pre_build:
     commands:
-      - echo Preparing database to run tests...
-      - cp config/database.yml.example config/database.yml
+      - echo Preparing database...
+      # - cp config/database.yml.example config/database.yml
       - bundle exec rake db:setup
       - bundle exec rake db:migrate
       - bundle exec rake db:seed
