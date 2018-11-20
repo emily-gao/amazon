@@ -3,13 +3,9 @@ version: 0.1
 phases:
   install:
     commands:
-      - echo Starting postgresql...
-      - /etc/init.d/postgresql start
-      - su -l -c "psql -c \"CREATE USER emilygao;\"" postgres
-      - su -l -c "psql -c 'CREATE DATABASE zayzoon_development WITH OWNER = emilygao;'" postgres
       - echo Installing Bundler...
       - gem install bundler
-      - bundle install
+      - bundle install --with test
   pre_build:
     commands:
       - echo Preparing database to run tests...
