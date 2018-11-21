@@ -14,19 +14,15 @@ Docker is required to proceed with the following steps. If you don't have Docker
     ```ruby 
     cd amazon
     ```
-3. set up Rails skeleton 
-    ```ruby
-    docker-compose run web rails new . --force --database=postgresql
-    ```
-4. build Docker image 
+3. build Docker image 
     ```ruby
     docker-compose build
     ```
-5. start the app 
+4. start the app 
     ```ruby
     docker-compose up
     ```
-6. create the database, run migration and seed 
+5. create the database, run migration and seed 
      ```ruby
      docker-compose run web rake db:setup
      ```
