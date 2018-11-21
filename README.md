@@ -3,6 +3,9 @@
 This is an app that lets you query products base on product name, department and/or promotion.
 
 ## HOW TO RUN APP
+
+Docker is required to proceed with the following steps. If you don't have Docker installed already, you can download it [here](https://www.docker.com/get-started).
+
 1. clone repository onto local machine 
     ```ruby 
     git clone git@github.com:emily-gao/amazon.git amazon
