@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an app that lets you query products base on product name, department and/or promotion.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### HOW TO RUN APP
+`git clone git@github.com:emily-gao/amazon.git amazon`
+`cd amazon`
+`docker-compose run web rails new . --force --database=postgresql`
+`docker-compose build`
+`docker-compose up`
+`docker-compose run web rake db:setup`
