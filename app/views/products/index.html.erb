@@ -19,6 +19,7 @@
 
     <div class="row">
       <div class="col-md-12">
+        <%= paginate @products, class: 'float-right mb-1' %>
         <table class="table table-striped">
           <thead>
             <tr>
@@ -66,7 +67,7 @@
               <% end %>
           </tbody>
         </table>
-        <%= paginate @products %>
+        <%= paginate @products, class: 'float-right' %>
       </div>
     </div>
   </div>

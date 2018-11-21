@@ -1,27 +1,15 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  host: localhost
+  host: db
+  username: postgres
+  password:
   pool: 5
 
 development:
   <<: *default
-  database: amazon_development
+  database: myapp_development
 
 test:
   <<: *default
-  database: amazon_test
-
-sandbox:
-  <<: *default
-  database: amazon_sandbox
-
-staging:
-  <<: *default
-  database: amazon_staging
-
-production:
-  <<: *default
-  database: amazon_production
+  database: myapp_test
