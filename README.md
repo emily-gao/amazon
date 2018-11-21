@@ -36,3 +36,7 @@ Ruby on Rails
 Docker
 
 AWS
+
+## Continuous Deployment
+
+AWS Pipeline. [http://amazon-env.pafm4mfxgp.us-east-2.elasticbeanstalk.com/](http://amazon-env.pafm4mfxgp.us-east-2.elasticbeanstalk.com/)(currently code build is failing)
